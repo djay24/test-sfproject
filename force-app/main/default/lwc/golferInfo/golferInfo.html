@@ -11,7 +11,7 @@
                         <div class="slds-p-around_x-small">
                             <h1 class="name-header">{item.FirstName} {item.LastName}</h1>
                             <p>World Ranking: {item.Golf_Position__c}</p>
-                            <button value={item.id} onclick={expandCard}>▼</button>
+                            <button class="expand-button" value={item.id} onclick={expandCard}>▼</button>
                             <template if:true={item.expand}>
                                 hi
                             </template>
