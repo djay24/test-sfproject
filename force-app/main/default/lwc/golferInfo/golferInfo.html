@@ -1,0 +1,25 @@
+<template>
+    <div class="main slds-p-around_medium">
+        <template if:true={showSpinner}>
+            <lightning-spinner></lightning-spinner>
+        </template>
+        <h1 class="main-header">World Rankings</h1>
+        <div class="slds-grid slds-wrap">
+            <template for:each={golferList} for:item="item">
+                <div key={item.id} class="slds-col slds-small-size_4-of-12 slds-p-around_small">
+                    <lightning-card>
+                        <div class="slds-p-around_x-small">
+                            <h1 class="name-header">{item.FirstName} {item.LastName}</h1>
+                            <p>World Ranking: {item.Golf_Position__c}</p>
+                            <button value={item.id} onclick={expandCard}>▼</button>
+                            <template if:true={item.expand}>
+                                hi
+                            </template>
+                        </div>
+                    </lightning-card>
+                </div>
+                
+            </template>
+        </div>  
+    </div>
+</template>
